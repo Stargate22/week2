@@ -74,6 +74,37 @@
                 font-size: 30px;
             }
         }
+	
+	.info {
+    		max-width: 500px;
+    		margin: 40px auto;
+    		padding: 25px;
+    		text-align: left;
+    		background: rgba(255, 255, 255, 0.08);
+    		border: 1px solid rgba(255, 255, 255, 0.15);
+    		border-radius: 20px;
+	}
+
+	.info h2 {
+    		color: #93c5fd;
+    		font-size: 21px;
+    		margin-top: 20px;
+	}
+
+	.info p {
+    		color: #cbd5e1;
+    		line-height: 1.7;
+	}
+
+	.github {
+    		margin-top: 20px;
+    		background: #15803d;
+	}
+
+	.github:hover {
+    		background: #166534;
+	}
+
     </style>
 </head>
 
@@ -90,6 +121,32 @@
         <a href="http://193.166.24.141/" class="button">
             Takaisin viikon 1 etusivulle →
         </a>
+
+	<section class="info">
+    		<h2>Tietokanta ja kävijälaskuri</h2>
+    		<p>
+        	Sovellus käyttää MariaDB-tietokantaa.
+        	Kävijälaskurin arvo tallennetaan
+        	viikko2-tietokannan laskuri-tauluun.
+        	Flask-sovellus kasvattaa laskuria
+        	jokaisella sivun latauksella.
+    		</p>
+
+    		<h2>Uudelleenkäynnistystesti</h2>
+    		<p>
+        	Testasin sovelluksen käynnistämällä
+        	Ubuntu-virtuaalikoneen uudelleen.
+        	Nginx, Flask ja MariaDB käynnistyivät
+        	automaattisesti. Kävijälaskuri
+        	säilytti aiemman arvonsa ja jatkoi
+        	kasvamista uudelleenkäynnistyksen jälkeen.
+    		</p>
+	</section>
+
+	<a href="https://github.com/Stargate22/viikko2"
+   	class="button github">
+    	GitHub – Projektin lähdekoodi
+	</a>
 
     </main>
 </body>
