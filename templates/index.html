@@ -1,10 +1,10 @@
 
 <!DOCTYPE html>
-<html lang="fi">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Viikko 2 | Python-verkkosovellus</title>
+    <title>Week 2 | Python Web Application</title>
 
     <style>
         * {
@@ -26,7 +26,7 @@
             width: 90%;
             max-width: 650px;
             text-align: center;
-            padding: 30px 15px;
+            padding: 40px 15px;
         }
 
         h1 {
@@ -55,8 +55,31 @@
             color: #60a5fa;
         }
 
+        .info {
+            max-width: 500px;
+            margin: 40px auto;
+            padding: 25px;
+            text-align: left;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 20px;
+        }
+
+        .info h2 {
+            color: #93c5fd;
+            font-size: 21px;
+            margin-top: 20px;
+        }
+
+        .info p {
+            color: #cbd5e1;
+            line-height: 1.7;
+        }
+
         .button {
-            display: inline-block;
+            display: block;
+            max-width: 350px;
+            margin: 15px auto;
             padding: 15px 25px;
             background: #2563eb;
             color: white;
@@ -69,84 +92,63 @@
             background: #1d4ed8;
         }
 
+        .github {
+            background: #15803d;
+        }
+
+        .github:hover {
+            background: #166534;
+        }
+
         @media (max-width: 600px) {
             h1 {
                 font-size: 30px;
             }
         }
-	
-	.info {
-    		max-width: 500px;
-    		margin: 40px auto;
-    		padding: 25px;
-    		text-align: left;
-    		background: rgba(255, 255, 255, 0.08);
-    		border: 1px solid rgba(255, 255, 255, 0.15);
-    		border-radius: 20px;
-	}
-
-	.info h2 {
-    		color: #93c5fd;
-    		font-size: 21px;
-    		margin-top: 20px;
-	}
-
-	.info p {
-    		color: #cbd5e1;
-    		line-height: 1.7;
-	}
-
-	.github {
-    		margin-top: 20px;
-    		background: #15803d;
-	}
-
-	.github:hover {
-    		background: #166534;
-	}
-
     </style>
 </head>
 
 <body>
     <main class="container">
 
-        <h1>Viikko 2: Python-verkkosovellus</h1>
+        <h1>Week 2: Python Web Application</h1>
 
         <div class="counter">
-            <h2>SIVUN LATAUKSET</h2>
+            <h2>PAGE VIEWS</h2>
             <div class="number">{{ kaynnit }}</div>
         </div>
 
-        <a href="http://193.166.24.141/" class="button">
-            Takaisin viikon 1 etusivulle →
+        <section class="info">
+            <h2>Database and Page View Counter</h2>
+            <p>
+                This application uses a MariaDB database.
+                The page view count is stored in the
+                laskuri table of the viikko2 database.
+                The Python Flask application updates the
+                counter every time the page is loaded.
+            </p>
+
+            <h2>Server Restart Test</h2>
+            <p>
+                I tested the application by restarting
+                the Ubuntu virtual machine.
+                Nginx, Flask and MariaDB started
+                automatically after the reboot.
+                The page view count was preserved
+                in the database and continued
+                increasing after the restart.
+            </p>
+        </section>
+
+        <a href="https://github.com/Stargate22/week2"
+           class="button github">
+            View Source Code on GitHub
         </a>
 
-	<section class="info">
-    		<h2>Tietokanta ja kävijälaskuri</h2>
-    		<p>
-        	Sovellus käyttää MariaDB-tietokantaa.
-        	Kävijälaskurin arvo tallennetaan
-        	viikko2-tietokannan laskuri-tauluun.
-        	Flask-sovellus kasvattaa laskuria
-        	jokaisella sivun latauksella.
-    		</p>
-
-    		<h2>Uudelleenkäynnistystesti</h2>
-    		<p>
-        	Testasin sovelluksen käynnistämällä
-        	Ubuntu-virtuaalikoneen uudelleen.
-        	Nginx, Flask ja MariaDB käynnistyivät
-        	automaattisesti. Kävijälaskuri
-        	säilytti aiemman arvonsa ja jatkoi
-        	kasvamista uudelleenkäynnistyksen jälkeen.
-    		</p>
-	</section>
-
-	<a href="https://github.com/Stargate22/viikko2"
-   	class="button github">
-    	GitHub – Projektin lähdekoodi
-	</a>
+        <a href="http://193.166.24.141/"
+           class="button">
+            Back to Week 1 Homepage
+        </a>
 
     </main>
 </body>
